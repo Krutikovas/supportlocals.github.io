@@ -1,0 +1,630 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0">
+    <title>Support Locals</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-KK94CHFLLe+nY2dmCWGMq91rCGa5gtU4mk92HdvYe+M/SXH301p5ILy+dN9+nJOZ" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.3.0/font/bootstrap-icons.css">
+    <style>
+      .nav-linkas{
+  margin-left:35px;
+  margin-right:35px;
+}
+body{
+  background-color: #fefae0;
+}
+
+.navbar-brand:hover{
+  color: #d4a373;
+}
+.nav-link:hover{
+  color: #d4a373;
+}
+.btn{
+  border:0px solid;
+}
+.btn:hover {
+  border:0px solid line;
+  background-color: #d4a373;
+  
+}
+.sup{
+  text-align:center;
+  margin:3%;
+}
+.navbar-toggler{
+  border:0px solid;
+  
+  margin-top:-10px;
+  font-size:1rem;
+}
+.input-group{
+  margin-right:30%;
+}
+#mazas{
+  display:none;
+  
+}
+#didelis{
+  font-size:1.25rem;
+}
+.card{
+  border: 0px solid;
+}
+.card:hover
+{
+border:3px solid;
+border-color: #d4a373;
+}
+.card-title
+{
+margin-top:16px;
+}
+.prekes-aprasymas
+{
+  margin-top:-8px;
+}
+#ikona1, #ikona2, #ikona3, #ikona4
+{
+  background-color: transparent;
+  
+}
+.breadcrumb-item
+{
+  font-size:12px;
+}
+/* Chat Container */
+.chat-container {
+  
+  margin: 5% auto;
+  background-color: #fff;
+  border-radius: 10px;
+  overflow: hidden;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+}
+
+/* Chat Box */
+#chat-box {
+  padding: 3px;
+}
+
+/* User Message */
+.user-message {
+  margin: 0 0 10px auto;
+  max-width: 50%;
+  padding: 10px 20px;
+  background-color: #d4a373;
+  color: #fff;
+  border-radius: 10px 0 10px 10px;
+  text-align: right;
+  word-wrap: break-word;
+}
+
+/* Bot Message */
+.bot-message {
+  display: flex;
+  margin: 0 auto auto 0;
+  max-width: 80%;
+  padding: 10px 20px;
+  background-color: #f7f7f7;
+  color: #000;
+  border-radius: 0 10px 10px 10px;
+  word-wrap: break-word;
+}
+
+/* Reply Animation */
+.reply-animation {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-right: 10px;
+}
+
+.reply-animation .iconify {
+  font-size: 1.5rem;
+  color: #007bff;
+  margin-right: 5px;
+  animation-name: bounce;
+  animation-duration: 1s;
+  animation-iteration-count: infinite;
+}
+.spinner-container {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 9999;
+  background-color: rgba(255, 255, 255);
+}
+
+.accordion-button:focus{
+box-shadow: none;
+
+
+}
+.accordion-button:not(.collapsed) {
+    background-color: transparent !important;
+  }
+
+
+  
+#kiekis
+{
+  background-color: #e9edc9;
+  
+}
+@keyframes bounce {
+  0%,
+  100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-5px);
+  }
+}
+
+
+
+@media (max-width: 700px) {
+  #mazas {
+    display: flex;
+    flex-direction: row;
+    align-items: flex-end;
+    
+  }
+  .icon-container>ul>li{
+    margin-right:16px;
+    font-size:1.25rem;
+  }
+  .input-group{
+    margin-left:16px;
+    margin-right:16px;
+  }
+  .navbar-brand{
+    margin-left:16px;
+  }
+  #didelis
+  {
+    display:none;
+  }
+  .breadcrumb-item>a
+{
+  margin-left:16px;
+}
+  
+  #hero
+  {
+    padding-left: 30px;
+    padding-right: 30px;
+  }
+  
+  .forma
+  {
+    padding-left:30px;
+    padding-right: 30px;
+  }
+}
+
+
+
+    </style>
+  </head>
+  <body>
+    
+    <nav class="navbar navbar-expand-lg">
+      <div class="container"> 
+        
+          <a href="index.html" class="navbar-brand"> <i class="bi bi-geo-alt" style="color:#d4a373"></i> Support Locals</a>
+          <div class="icon-container">
+            
+            <ul class="navbar-nav mr-auto"  id="mazas">
+                <li class="nav-item">
+                    <a href="#" class="nav-link"><i class="bi bi-heart-fill" ></i></a>
+                </li>
+                <li class="nav-item">
+                    <a href="prisijungti.html" class="nav-link"><i class="bi bi-person-circle"></i></a>
+                </li>
+                <li class="nav-item">
+                    <a href="#" class="nav-link"><i class="bi bi-cart-fill"></i></a>
+                </li>
+                <li class="nav-item">
+                    <a href="#" class="nav-link" >EN</a>
+                </li>
+                
+            </ul>
+        </div>
+          <div class="input-group">
+             <input type="search" class="form-control typeahead-input" placeholder="Paieška" aria-label="Paieška" aria-describedby="basic-addon2">
+              <button class="btn btn-secondary" id="basic-addon2">Ieškoti</button> 
+            </div>
+            
+          <div class="icon-container">
+            
+              <ul class="navbar-nav mr-auto" id="didelis">
+                  <li class="nav-item">
+                      <a href="#" class="nav-link"><i class="bi bi-heart-fill" ></i></a>
+                  </li>
+                  <li class="nav-item">
+                      <a href="prisijungti.html" class="nav-link"><i class="bi bi-person-circle"></i></a>
+                  </li>
+                  <li class="nav-item">
+                      <a href="#" class="nav-link"><i class="bi bi-cart-fill"></i></a>
+                  </li>
+                  <li class="nav-item">
+                      <a href="#" class="nav-link" >EN</a>
+                  </li>
+                  
+              </ul>
+          </div>
+          
+          </div>
+
+        
+
+      </div>
+     
+  </nav>
+  <div class="container">
+    <nav class="navbar navbar-expand-lg">
+     <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navmenu">
+      <span class="navbar-toggler-icon"></span>
+     </button>
+      <div class="collapse navbar-collapse justify-content-center" id="navmenu">
+        <ul class="navbar-nav flex-fill justify-content-between">
+          <li class="nav-linkas">
+              <a href="Prekes.html" class="nav-link">Prekės</a>
+          </li>
+          <li class="nav-linkas">
+            <a href="#" class="nav-link">Paslaugos</a>
+        </li>
+        <li class="nav-linkas">
+          <a href="parduotuves.html" class="nav-link">Parduotuvės</a>
+      </li>
+      <li class="nav-linkas">
+        <a href="#" class="nav-link">Apie</a>
+    </li>
+    <li class="nav-linkas">
+      <a href="#" class="nav-link">Tinklaraštis</a>
+  </li>
+  <li class="nav-linkas">
+    <a href="#" class="nav-link">Pardavėjams</a>
+</li>
+<li class="nav-linkas">
+  <a href="ai.html"><button class="btn btn-secondary" type="submit">Nežinai, ką dovanoti?</button></a>
+</li>
+      </ul>
+      </div>
+      
+    </nav></div>
+    <!--Breadcrumbs-->
+    <div class="container">
+      <nav aria-label="breadcrumb">
+        <ol class="breadcrumb">
+          <li class="breadcrumb-item"><a href="index.html" style="color:#d4a373">Titulinis</a></li>
+          <li class="breadcrumb-item active" aria-current="page">Nežinai, ką dovanoti?</li>
+        </ol>
+      </nav></div>
+    
+    
+      <div class="container mt-5" id="hero">
+        <h1>Nežinai, ką dovanoti?</h1>
+        <p class="text-truncate full-text"><b>Support Locals</b> platformoje galite naudoti dirbtinio intelekto įskiepį, kuris padeda rasti puikiai tinkančią dovaną savo draugui ar artimajam. Paprasčiausias būdas tai padaryti - įvesti užklausą, pavyzdžiui, "Ieškau dovanos savo draugui, kuris mėgsta krepšinį". Sistema tada pateiks siūlomas prekes, kurios gali būti susijusios su krepšiniu arba galbūt tiks jūsų draugui dėl kitų priežasčių. Šis įrankis yra naudingas tiems, kurie nori rasti dovaną, tačiau neturi konkretaus produkto ar prekės, kurią nori įsigyti, sąrašo. Tai taip pat yra gera galimybė rasti unikalias ir specialias prekes, kurių galbūt net nepagalvojote. <b>Support Locals</b> dirbtinio intelekto įskiepis padės jums rasti puikią dovaną ir tuo pačiu paremti vietinius verslininkus.</p>
+        <a href="#" class="more-link" style="color:#d4a373;">Daugiau</a>
+      </div>
+    
+
+<!--FAQ-->
+    <div class="container forma mt-5" >
+      <h2>Instrukcija</h2>
+    <div class="accordion" id="accordionExample">
+      <div class="accordion-item">
+        <h2 class="accordion-header" id="headingOne">
+          <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapseOne" aria-expanded="false" aria-controls="collapseOne">
+            Kaip naudotis šiuo įrankiu?
+          </button>
+        </h2>
+        <div id="collapseOne" class="accordion-collapse collapse" aria-labelledby="headingOne" data-bs-parent="#accordionExample">
+          <div class="accordion-body">
+            Šiuo įrankiu naudotis yra labai paprasta. Jums tereikia užpildyti formą, kuriame sužymėsite Jums reikalingus parametrus, pagal kuriuos sistema pateiks tikslesnį atsakymą pagal Jūsų užpildytus kriterijus. Užpildžius formą, jums tereikės parašyti užklausą, kurioje apibūdinsite ko ieškote.
+          </div>
+        </div>
+      </div>
+      <div class="accordion-item">
+        <h2 class="accordion-header" id="headingTwo">
+          <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
+            Kaip rašyti užklausas?
+          </button>
+        </h2>
+        <div id="collapseTwo" class="accordion-collapse collapse" aria-labelledby="headingTwo" data-bs-parent="#accordionExample">
+          <div class="accordion-body">
+            Užklausas galima rašyti įvairias, tačiau norint gauti kuo tikslesnį atsakymą, reikia detaliai aprašyti norimus kriterijus. Prieš siunčiant užklausą, turite sužymėti kriterijus, esančius formoje, ir tik vėliau siųsti užklausą. Taigi, užklausa gali būti tokia: "Rask dovaną žmogui, kuris mėgsta fotografuoti bei aktyviai leisti laiką" arba "Rask dovaną žmogui, kuriam patinka ekstremalios dovanos, pavyzdžiui pasivažinėjimas lenktyniniu automobiliu." Svarbu užduoti konkrečias, bet tuo pačiu paprastas užklausas, su kuriomis mūsų sistema pateiks atsakymus į Jums rūpimus klausimus. 
+          </div>
+        </div>
+      </div></div></div>
+      <!--Forma-->
+      <div class="container forma mt-5">
+        <h2>Forma</h2>
+        <div class="row">
+          <div class="col-lg-6 col-12 mt-3">
+            <h6>Kokios lyties žmogui norite dovanoti?</h6>
+            <select class="form-control form-control-sm btn-secondary" id="kiekis" style="height: 36px;">
+              <option selected>Pasirinkite lytį</option>
+              <option>Vyras</option>
+              <option>Moteris</option>
+            </select>
+          </div>
+          <div class="col-lg-6 col-12 mt-3">
+            <h6>Kiek metų žmogui, kuriam norite dovanoti dovaną?</h6>
+            
+              <input type="number" id="kiekis" class="form-control" placeholder="Įveskite amžių" style="height: 36px;"/>
+              
+          </div>
+        
+          <div class="col-lg-6 col-12 mt-3">
+            <h6>Kokiai progai norite išrinkti dovaną?</h6>
+            <select class="form-control form-control-sm btn-secondary" id="kiekis" style="height: 36px;">
+              <option selected>Pasirinkite progą</option>
+              <option>Gimtadienis</option>
+              <option>Kalėdos</option>
+              <option>Vėlykos</option>
+              <option>Draugystės/Vestuvių metinės</option>
+              <option>Valentino diena</option>
+              <option>Įkurtuvės</option>
+              <option>Kita</option>
+            </select>
+          </div>
+          
+        </div>
+      </div>
+      
+     <!--AI-->
+    
+   <div class="container forma">
+    <div class="container chat-container justify-content-center mt-5">
+      <h2 class="sup">Rašykite užklausą ir raskite tinkamas prekes</h2>
+      <div id="chat-box"></div>
+      <div class="input-group mx-auto mb-3 mt-3">
+        <input type="text" class="form-control chat-input"placeholder="Rašykite užklausą čia...">
+        <button class="btn btn-secondary send-btn">Siųsti</button>
+      </div>
+    </div></div>
+    
+   <!-- Footer -->
+<footer class="text-center text-lg-start bg-light text-muted">
+
+  <!-- Section: Social media -->
+
+  <!-- Section: Links  -->
+  <section class="">
+    <div class="container text-center text-md-start mt-5 pt-4">
+      <!-- Grid row -->
+      <div class="row me-3">
+        <!-- Grid column -->
+        <div class="col-md-2 col-lg-2 col-xl-2 mx-auto mb-4">
+          <!-- Content -->
+          <h6 class="text-uppercase fw-bold mb-4">
+            Support Locals
+          </h6>
+          <p>© 2023. Visos teisės saugomos.</p>
+          <p>
+            UAB „Support Locals“,
+          </p>
+          <p>
+            Pamėnkalnio g. 11, LT-01116 Vilnius,
+          </p>
+          <p>
+            Įmonės kodas: 354496467,
+          </p>
+          <p>info@supportlocals.lt</p>
+        </div>
+        <!-- Grid column -->
+
+        <!-- Grid column -->
+        <div class="col-md-2 col-lg-2 col-xl-2 mx-auto mb-4">
+          <!-- Links -->
+          <h6 class="text-uppercase fw-bold mb-4">
+            Informacija
+          </h6>
+          <p>
+            <a href="#" class="text-reset">D.U.K</a>
+          </p>
+          <p>
+            <a href="#" class="text-reset">Siuntimas</a>
+          </p>
+          <p>
+            <a href="#" class="text-reset">Grąžinimai</a>
+          </p>
+          <p>
+            <a href="#" class="text-reset">Taisyklės</a>
+          </p>
+        </div>
+        <!-- Grid column -->
+
+        <!-- Grid column -->
+        <div class="col-md-3 col-lg-2 col-xl-2 mx-auto mb-4">
+          <!-- Links -->
+          <h6 class="text-uppercase fw-bold mb-4">
+            Pirkėjams
+          </h6>
+          <p>
+            <a href="#!" class="text-reset">Apie mus</a>
+          </p>
+          <p>
+            <a href="#!" class="text-reset">Parduotuvės</a>
+          </p>
+          <p>
+            <a href="#!" class="text-reset">Paieška</a>
+          </p>
+          <p>
+            <a href="#!" class="text-reset">Tinklaraštis</a>
+          </p>
+        </div>
+        <!-- Grid column -->
+        <div class="col-md-3 col-lg-2 col-xl-2 mx-auto mb-4">
+        <!-- Links -->
+        <h6 class="text-uppercase fw-bold mb-4">
+          Pardavėjams
+        </h6>
+        <p>
+          <a href="#!" class="text-reset">Apie mus</a>
+        </p>
+        <p>
+          <a href="#!" class="text-reset">Taisyklės</a>
+        </p>
+      
+      </div>
+        <!-- Grid column -->
+        <div class="col-md-4 col-lg-3 col-xl-3 mx-auto mb-md-0 mb-4">
+          
+          <h6 class="text-uppercase fw-bold mb-4">Mus rasite</h6>
+          <span><i class="bi bi-facebook"></i> </span>
+          <span><i class="bi bi-instagram"></i></sapn>
+          <span><i class="bi bi-twitter"></i></sapn>
+        </div>
+        
+        </div>
+      
+      
+  
+  </section>
+  
+</footer>
+<div class="spinner-container">
+  <div class="spinner-border text-secondary" style="width: 3rem; height: 3rem;" role="status">
+    
+  </div>
+</div>
+<!-- Footer -->
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ENjdO4Dr2bkBIFxQpeoTz1HIcje39Wm4jDKdf19U8gI4ddQ3GYNS7NTKfAdVQSZe" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.7/dist/umd/popper.min.js" integrity="sha384-zYPOMqeu1DAVkHiLqWBUTcbYfZ8osu1Nd6Z89ify25QV9guujx43ITvfi12/QExE" crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/js/bootstrap.min.js" integrity="sha384-Y4oOpwW3duJdCWv5ly8SCFYWqFDsfob/3GkgExXKV4idmbt98QcxXYs9UoXAB7BZ" crossorigin="anonymous"></script>
+<script src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
+ <script>
+  const chatBox = document.getElementById("chat-box");
+const chatInput = document.querySelector(".chat-input");
+
+
+const sendBtn = document.querySelector(".send-btn");
+
+sendBtn.addEventListener("click", () => {
+  const userMessage = chatInput.value;
+  chatInput.value = "";
+  const userDiv = document.createElement("div");
+  userDiv.classList.add("user-message");
+  userDiv.textContent = userMessage;
+  chatBox.appendChild(userDiv);
+  setTimeout(() => {
+    const botDiv = document.createElement("div");
+    botDiv.classList.add("bot-message");
+    botDiv.innerHTML = `
+      
+      
+
+      <div class="row justify-content-center" id="prekes" >
+        <div class="reply-animation">
+        <span class="iconify" data-icon="bi:three-dots"><i class="bi bi-three-dots"></i></span>
+        
+      </div><div class="col-10">
+          <p>Pagal Jūsų užklausą galime pasiūlyti įsigyti momentinius fotoaparatus, kurie leis įamžinti kiekvieną akimirką ir galėsite džiaugtis nuotrauka iškart nufotografavus. Raskite Jums patinkantį momentinį fotoaparatą:</p></div>
+        <div class="col-xl-5 col-12 mt-3">
+         <div class="card" id="pirmas">
+           <img src="images/preke1.png" class="card-img-top img-fluid">
+           <span class="position-absolute bottom-0 end-0 m-3" id="love"><i class="bi bi-heart-fill text-secondary"></i></span>
+           <div class="card-body">
+             <div class="">
+             <button class="btn btn-secondary col-12" type="submit">Į krepšelį</button>
+             <h6 class="card-title">22,99€</h6>
+             </div>
+             <div class="prekes-aprasymas">
+             <span class="">Fotoaparatas Polaroid Now+, white</span></div>
+             <span class=""><b>Aldo.lt</b></span>
+             <div class="star">
+               <i class="bi bi-star-fill text-warning"></i>
+               <i class="bi bi-star-fill text-warning"></i>
+               <i class="bi bi-star-fill text-warning"></i>
+               <i class="bi bi-star-fill text-warning"></i>
+               <i class="bi bi-star-fill"></i>
+               <span class="">(1)</span>
+     
+             </div>
+             </div>
+         </div>
+     
+        </div>
+        
+     
+       
+        <div class="col-xl-5 col-12 mt-3">
+         <div class="card" id="ketvirtas">
+           <img src="images/preke1.png" class="card-img-top img-fluid">
+           <span class="position-absolute bottom-0 end-0 m-3" id="love"><i class="bi bi-heart-fill text-secondary"></i></span>
+           <div class="card-body">
+             <div class="">
+             <button class="btn btn-secondary col-12" type="submit">Į krepšelį</button>
+             <h6 class="card-title">22,99€</h6>
+             </div>
+             <div class="prekes-aprasymas">
+               <span class="">Fotoaparatas Polaroid Now+, white</span></div>
+               <span class=""><b>Aldo.lt</b></span>
+             <div class="star">
+               <i class="bi bi-star-fill text-warning"></i>
+               <i class="bi bi-star-fill text-warning"></i>
+               <i class="bi bi-star-fill text-warning"></i>
+               <i class="bi bi-star-fill text-warning"></i>
+               <i class="bi bi-star-fill"></i>
+               <span class="">(1)</span>
+     
+             </div>
+             </div>
+         </div>
+     
+        </div>
+       </div>
+
+    `;
+    
+    chatBox.appendChild(botDiv);
+    const replyAnimation = botDiv.querySelector(".reply-animation");
+    setTimeout(() => {
+      replyAnimation.style.display = "none";
+      
+    }, 2000);
+    setTimeout(() => {
+      botDiv.removeChild(replyAnimation);
+      
+    }, 2500);
+    
+  }, 2000);
+});
+</script>
+<script>
+$(function() {
+        $('.more-link').on('click', function() {
+            var $this = $(this);
+            var $content = $this.prev('.full-text');
+            var linkText = $this.text().toUpperCase();
+            
+            if(linkText === "DAUGIAU"){
+                linkText = "Mažiau";
+                $content.removeClass('text-truncate');
+            } else {
+                linkText = "Daugiau";
+                $content.addClass('text-truncate');
+            };
+            
+            $this.text(linkText);
+        });
+    });
+    $(window).on('load', function() {
+        setTimeout(function(){
+          $('.spinner-container').fadeOut('slow');
+        }, 1000); // show loading for additional 1 second
+      });
+ </script> </body>
+</html>
