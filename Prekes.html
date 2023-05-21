@@ -1,0 +1,1066 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0">
+    <title>Prekės</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-KK94CHFLLe+nY2dmCWGMq91rCGa5gtU4mk92HdvYe+M/SXH301p5ILy+dN9+nJOZ" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.3.0/font/bootstrap-icons.css">
+    <style>
+      .nav-linkas{
+  margin-left:35px;
+  margin-right:35px;
+}
+body{
+  background-color: #fefae0;
+}
+
+.navbar-brand:hover{
+  color: #d4a373;
+}
+.nav-link:hover{
+  color: #d4a373;
+}
+
+.btn{
+  border:0px solid;
+}
+.btn:hover {
+  border:0px solid line;
+  background-color: #d4a373;
+  
+}
+.navbar-toggler{
+  border:0px solid;
+  
+  margin-top:-10px;
+  font-size:1rem;
+}
+.input-group{
+  margin-right:30%;
+}
+#mazas{
+  display:none;
+  
+}
+#didelis{
+  font-size:1.25rem;
+}
+
+
+.card-title
+{
+margin-top:16px;
+}
+.prekes-aprasymas
+{
+  margin-top:-8px;
+}
+#ikona1, #ikona2, #ikona3, #ikona4,#ikona5,#ikona6
+{
+  background-color: transparent;
+  border:0px solid;
+}
+#ikona1:hover
+{
+  border:3px solid;
+border-color: #d4a373;
+}
+#ikona2:hover
+{
+  border:3px solid;
+border-color: #d4a373;
+}
+#ikona3:hover
+{
+  border:3px solid;
+border-color: #d4a373;
+}
+#ikona4:hover
+{
+  border:3px solid;
+border-color: #d4a373;
+}
+#ikona5:hover
+{
+  border:3px solid;
+border-color: #d4a373;
+}
+#ikona6:hover
+{
+  border:3px solid;
+border-color: #d4a373;
+}
+.breadcrumb-item
+{
+  font-size:12px;
+}
+#ikonu-divas{
+  margin-left:12%;
+  margin-right:12%;
+}
+
+#pirmas, #antras, #trecias
+  {
+    
+    margin-bottom: 20px;
+    
+  }
+  #pirmas:hover
+  {
+    
+   border:3px solid;
+border-color: #d4a373;
+    
+  }
+  #antras:hover
+  {
+    
+   border:3px solid;
+border-color: #d4a373;
+    
+  }
+  #trecias:hover
+  {
+    
+   border:3px solid;
+border-color: #d4a373;
+    
+  }
+  #ketvirtas:hover
+  {
+    
+   border:3px solid;
+border-color: #d4a373;
+    
+  }
+  .spinner-container {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 9999;
+  background-color: rgba(255, 255, 255);
+}
+  
+
+    #kiekis
+{
+  background-color: #e9edc9;
+  
+}
+
+.pagination .page-item .page-link {
+           
+            background-color: #e9edc9;
+            color:black;
+        }
+
+        .pagination .page-item .page-link:hover {
+            background-color: #d4a373;
+            color: black;
+        }
+
+@media (max-width: 700px) {
+  #mazas {
+    display: flex;
+    flex-direction: row;
+    align-items: flex-end;
+    
+  }
+  .icon-container>ul>li{
+    margin-right:16px;
+    font-size:1.25rem;
+  }
+  
+  .input-group{
+    margin-left:16px;
+    margin-right:16px;
+  }
+  .navbar-brand{
+    margin-left:16px;
+  }
+  #didelis
+  {
+    display:none;
+  }
+  
+  
+  .breadcrumb-item>a, #filter-btn
+{
+  margin-left:16px;
+}
+#ikonu-divas{
+  margin-left:none;
+  margin-right:none;
+}
+#ikonos-pavadinimas
+{
+  font-size: 0.75rem;
+}
+#filter-sidebar {
+    position: fixed;
+    top: 0;
+    right: -300px;
+    bottom: 0;
+    width: 300px;
+    padding: 20px;
+    background-color: #f8f9fa;
+    transition: all 0.3s ease-in-out;
+    z-index: 9999;
+  }
+
+  #filter-sidebar.show {
+    right: 0;
+    
+  }
+  #hero
+  {
+    padding-left:30px;
+    padding-right: 30px;
+  }
+  #pirmas
+  {
+    margin-left:16px;
+    margin-bottom: 16px;
+  }
+  #antras
+  {
+    margin-right: 16px;
+    margin-bottom: 16px;
+  }
+  #trecias
+  {
+    margin-left:16px;
+    margin-bottom: 16px;
+  }
+  #ketvirtas
+  {
+    margin-right: 16px;
+    margin-bottom: 16px;
+  }
+  
+  
+}
+
+
+
+    </style>
+  </head>
+  <body>
+    
+    <nav class="navbar navbar-expand-lg">
+      <div class="container"> 
+        
+          <a href="index.html" class="navbar-brand"> <i class="bi bi-geo-alt" style="color:#d4a373"></i> Support Locals</a>
+          <div class="icon-container">
+            
+            <ul class="navbar-nav mr-auto"  id="mazas">
+                <li class="nav-item">
+                    <a href="#" class="nav-link"><i class="bi bi-heart-fill" ></i></a>
+                </li>
+                <li class="nav-item">
+                    <a href="prisijungti.html" class="nav-link"><i class="bi bi-person-circle"></i></a>
+                </li>
+                <li class="nav-item">
+                    <a href="krepselis.html" class="nav-link"><i class="bi bi-cart-fill"></i></a>
+                </li>
+                <li class="nav-item">
+                    <a href="#" class="nav-link" >EN</a>
+                </li>
+                
+            </ul>
+        </div>
+          <div class="input-group">
+             <input type="search" class="form-control typeahead-input" placeholder="Paieška" aria-label="Paieška" aria-describedby="basic-addon2">
+              <button class="btn btn-secondary" id="basic-addon2">Ieškoti</button> 
+            </div>
+            
+          <div class="icon-container">
+            
+              <ul class="navbar-nav mr-auto" id="didelis">
+                  <li class="nav-item">
+                      <a href="#" class="nav-link"><i class="bi bi-heart-fill" ></i></a>
+                  </li>
+                  <li class="nav-item">
+                      <a href="prisijungti.html" class="nav-link"><i class="bi bi-person-circle"></i></a>
+                  </li>
+                  <li class="nav-item">
+                      <a href="krepselis.html" class="nav-link"><i class="bi bi-cart-fill"></i></a>
+                  </li>
+                  <li class="nav-item">
+                      <a href="#" class="nav-link" >EN</a>
+                  </li>
+                  
+              </ul>
+          </div>
+          
+          </div>
+
+        
+
+      </div>
+     
+  </nav>
+  <div class="container">
+    <nav class="navbar navbar-expand-lg">
+     <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navmenu">
+      <span class="navbar-toggler-icon"></span>
+     </button>
+      <div class="collapse navbar-collapse justify-content-center" id="navmenu">
+        <ul class="navbar-nav flex-fill justify-content-between">
+          <li class="nav-linkas">
+              <a href="Prekes.html" class="nav-link">Prekės</a>
+          </li>
+          <li class="nav-linkas">
+            <a href="#" class="nav-link">Paslaugos</a>
+        </li>
+        <li class="nav-linkas">
+          <a href="parduotuves.html" class="nav-link">Parduotuvės</a>
+      </li>
+      <li class="nav-linkas">
+        <a href="#" class="nav-link">Apie</a>
+    </li>
+    <li class="nav-linkas">
+      <a href="#" class="nav-link">Tinklaraštis</a>
+  </li>
+  <li class="nav-linkas">
+    <a href="#" class="nav-link">Pardavėjams</a>
+</li>
+<li class="nav-linkas">
+  <a href="ai.html"><button class="btn btn-secondary" type="submit">Nežinai, ką dovanoti?</button></a>
+</li>
+      </ul>
+      </div>
+      
+    </nav></div>
+    
+    <!--Breadcrumbs-->
+    <div class="container">
+    <nav aria-label="breadcrumb">
+      <ol class="breadcrumb">
+        <li class="breadcrumb-item"><a href="index.html" style="color:#d4a373">Titulinis</a></li>
+        <li class="breadcrumb-item active" aria-current="page">Prekės</li>
+      </ol>
+    </nav></div>
+    
+   
+    
+    <div class="row justify-content-center mt-4 p-4" id="ikonu-divas">
+      <div class="col-xl-2 col-6">
+       <div class="card" id="ikona1">
+         <img src="images/drabuziai.png" class="card-img-top img-fluid" style="width: 257px; height: auto;">
+         <div class="card-body d-flex justify-content-center">
+           <div class="">
+           <h6 class="card-title" id="ikonos-pavadinimas">Drabužiai</h6>
+           </div>
+           
+           </div>
+       </div>
+   
+      </div>
+      <div class="col-xl-2 col-6">
+        <div class="card" id="ikona2">
+          <img src="images/maistas.png" class="card-img-top img-fluid" style="width: 257px; height: auto;">
+          <div class="card-body d-flex justify-content-center">
+            <div class="">
+              <h6 class="card-title" id="ikonos-pavadinimas">Maistas</h6>
+            </div>
+            
+            </div>
+        </div>
+    
+       </div>
+       <div class="col-xl-2 col-6">
+        <div class="card" id="ikona3">
+          <img src="images/aksesuarai.png" class="card-img-top img-fluid" style="width: 257px; height: auto;">
+          <div class="card-body d-flex justify-content-center">
+            <div class="">
+            <h6 class="card-title" id="ikonos-pavadinimas">Aksesuarai</h6>
+            </div>
+            
+            </div>
+        </div>
+    
+       </div>
+       <div class="col-xl-2 col-6">
+        <div class="card" id="ikona4">
+          <img src="images/namams.png" class="card-img-top img-fluid" style="width: 257px; height: auto;">
+          <div class="card-body d-flex justify-content-center">
+            <div class="">
+            <h6 class="card-title" id="ikonos-pavadinimas">Namams</h6>
+            </div>
+            
+            </div>
+        </div>
+    
+       </div>
+       <div class="col-xl-2 col-6">
+        <div class="card" id="ikona5">
+          <img src="images/automobilis.png" class="card-img-top img-fluid" style="width: 257px; height: auto;">
+          <div class="card-body d-flex justify-content-center">
+            <div class="">
+            <h6 class="card-title" id="ikonos-pavadinimas">Automobiliui</h6>
+            </div>
+            
+            </div>
+        </div>
+    
+       </div>
+       <div class="col-xl-2 col-6">
+        <div class="card" id="ikona6">
+          <img src="images/kita.png" class="card-img-top img-fluid" style="width: 257px; height: auto;">
+          <div class="card-body d-flex justify-content-center">
+            <div class="">
+            <h6 class="card-title" id="ikonos-pavadinimas">Kita</h6>
+            </div>
+            
+            </div>
+        </div>
+    
+       </div>
+     
+       </div>
+
+    
+   
+    
+    
+    
+
+
+
+<div class="container">
+    <div class="row">
+      <div class="col-12 mb-3" id="hero">
+        <h1>Prekės</h1>
+        <p><b>Support Locals</b> parduotuvės "Prekės" kategorija yra pilna įvairiausių prekių, kurias siūlo smulkieji Lietuvos verslai. Čia galite rasti drabužių tiek vyrams, tiek moterims ir vaikams, kurie yra gaminami rankomis ir pasižymi ypatinga kokybe. </p></div>
+        <div class="col-12 d-none d-sm-block mb-3"> <div class="row justify-content-end"><div class="col-2 float-right"><select class="form-control form-control-sm btn-secondary" id="kiekis" style="height: 36px;">
+          <option selected>Rinkitės atvaizdavimą</option>
+          <option>Populiariausios prekės</option>
+          <option>Kaina nuo mažiausios iki didžiausios</option>
+          <option>Kaina nuo didžiausios iki mažiausios</option>
+          </select>
+          </div></div>
+          
+          </div>
+        
+        <!--Filtras-->
+      <div class="col-3 d-none d-sm-block" id="filtras">
+        <div class="row">
+        <div class="col-xl-12">
+        <div class="card" style="background-color:#e9edc9;">
+          <div class="card-body">
+            <div class="card-title"><b>Kaina</b></div>
+            
+            <div class="Kainos-filtras">
+              <input type="range" id="min-price-range" name="min-price-range" min="0" max="100" step="5" >
+               <label for="max-price-range">-</label>
+               <input type="range" id="max-price-range" name="max-price-range" min="0" max="100" step="5">
+              <p id="selected-range"></p>
+            </div>
+            <div class="card-title"><b>Kategorijos</b></div>
+            <div class="Kategorijos-filtras">
+            <p><input class="form-check-input" type="checkbox" value="" id="flexCheckIndeterminate"> Drabužiai (123)</p>
+            <p> <input class="form-check-input" type="checkbox" value="" id="flexCheckIndeterminate"> Maisto produktai (123)</p>
+            <p><input class="form-check-input" type="checkbox" value="" id="flexCheckIndeterminate"> Aksesuarai (123)</p>
+            <p><input class="form-check-input" type="checkbox" value="" id="flexCheckIndeterminate"> Namams (123)</p>
+            <p><input class="form-check-input" type="checkbox" value="" id="flexCheckIndeterminate"> Automobiliui (123)</p>
+            <p><input class="form-check-input" type="checkbox" value="" id="flexCheckIndeterminate"> Kita (123)</p>
+            </div>
+            <div class="card-title"><b>Kam skirta</b></div>
+            <div class="Kam-filtras">
+            <p><input class="form-check-input" type="checkbox" value="" id="flexCheckIndeterminate"> Moterims (123)</p>
+            <p><input class="form-check-input" type="checkbox" value="" id="flexCheckIndeterminate"> Vyrams(123)</p>
+            <p><input class="form-check-input" type="checkbox" value="" id="flexCheckIndeterminate"> Vaikams (123)</p>
+            <p><input class="form-check-input" type="checkbox" value="" id="flexCheckIndeterminate"> Kūdikiams (123)</p>
+            
+            </div>
+            <div class="card-title"><b>Parduotuvės</b></div>
+            <div class="Parduotuves-filtras">
+            <p><input class="form-check-input" type="checkbox" value="" id="flexCheckIndeterminate"> Aldo.lt (123)</p>
+            <p><input class="form-check-input" type="checkbox" value="" id="flexCheckIndeterminate"> Dviračių salonas (123)</p>
+            <p><input class="form-check-input" type="checkbox" value="" id="flexCheckIndeterminate"> Simitri.lt (123)</p>
+            <p><input class="form-check-input" type="checkbox" value="" id="flexCheckIndeterminate"> Žiupsnelis.lt (123)</p>
+            
+            </div>
+            <div class="card-title"><b>Specialūs pasiūlymai</b></div>
+            <div class="Pasiulymai-filtras">
+            <p><input class="form-check-input" type="checkbox" value="" id="flexCheckIndeterminate"> Su nemokamu pristatymu (123)</p>
+            <p><input class="form-check-input" type="checkbox" value="" id="flexCheckIndeterminate"> Su nuolaida (123)</p>
+            
+            
+            </div>
+            
+            </div>
+        </div></div>
+      </div>
+      
+    </div>
+    <!--Mobile filter-->
+    <div class="col-12 d-md-none d-sm-block" id="filtro-mygtukas" >
+      <div class="row">
+        <div class="col-2">
+    <button class="btn d-md-none mb-4" id="filter-btn" style="background-color:#e9edc9;"type="button" data-bs-toggle="collapse" data-bs-target="#filter-sidebar" aria-expanded="false" aria-controls="filter-sidebar">
+      <i class="bi bi-funnel"></i>
+    </button></div>
+    <div class="col-5">
+      <select class="form-control form-control-sm btn-secondary" id="kiekis" style="height: 36px;">
+        <option selected>Rinkitės atvaizdavimą</option>
+        <option>Populiariausios prekės</option>
+        <option>Kaina nuo mažiausios iki didžiausios</option>
+        <option>Kaina nuo didžiausios iki mažiausios</option>
+        </select>
+    </div>
+    </div>
+    <div class="collapse d-md-none d-block" id="filter-sidebar" style="overflow-y: auto;">
+      <div class="row" >
+        <div class="col-xl-12" id="filter-scroll">
+        <div class="card"style=" background-color: #e9edc9;">
+          <div class="card-body">
+            <div class="card-title"><b>Kaina</b></div>
+            
+            <div class="Kainos-filtras">
+              <input type="range" id="min-price-range" name="min-price-range" min="0" max="100" step="5">
+               <label for="max-price-range">-</label>
+               <input type="range" id="max-price-range" name="max-price-range" min="0" max="100" step="5">
+              <p id="selected-range"></p>
+            </div>
+            <div class="card-title"><b>Kategorijos</b></div>
+            <div class="Kategorijos-filtras">
+            <p><input class="form-check-input" type="checkbox" value="" id="flexCheckIndeterminate"> Drabužiai (123)</p>
+            <p><input class="form-check-input" type="checkbox" value="" id="flexCheckIndeterminate"> Maisto produktai (123)</p>
+            <p><input class="form-check-input" type="checkbox" value="" id="flexCheckIndeterminate"> Aksesuarai (123)</p>
+            <p> <input class="form-check-input" type="checkbox" value="" id="flexCheckIndeterminate">Namams (123)</p>
+            <p><input class="form-check-input" type="checkbox" value="" id="flexCheckIndeterminate"> Automobiliui (123)</p>
+            <p><input class="form-check-input" type="checkbox" value="" id="flexCheckIndeterminate"> Kita (123)</p>
+            </div>
+            <div class="card-title"><b>Kam skirta</b></div>
+            <div class="Kam-filtras">
+            <p><input class="form-check-input" type="checkbox" value="" id="flexCheckIndeterminate"> Moterims (123)</p>
+            <p><input class="form-check-input" type="checkbox" value="" id="flexCheckIndeterminate"> Vyrams(123)</p>
+            <p><input class="form-check-input" type="checkbox" value="" id="flexCheckIndeterminate"> Vaikams (123)</p>
+            <p><input class="form-check-input" type="checkbox" value="" id="flexCheckIndeterminate"> Kūdikiams (123)</p>
+            
+            </div>
+            <div class="card-title"><b>Parduotuvės</b></div>
+            <div class="Parduotuves-filtras">
+            <p><input class="form-check-input" type="checkbox" value="" id="flexCheckIndeterminate"> Aldo.lt (123)</p>
+            <p><input class="form-check-input" type="checkbox" value="" id="flexCheckIndeterminate"> Dviračių salonas (123)</p>
+            <p><input class="form-check-input" type="checkbox" value="" id="flexCheckIndeterminate"> Simitri.lt (123)</p>
+            <p><input class="form-check-input" type="checkbox" value="" id="flexCheckIndeterminate"> Žiupsnelis.lt (123)</p>
+            
+            </div>
+            <div class="card-title"><b>Specialūs pasiūlymai</b></div>
+            <div class="Pasiulymai-filtras">
+            <p><input class="form-check-input" type="checkbox" value="" id="flexCheckIndeterminate"> Su nemokamu pristatymu (123)</p>
+            <p><input class="form-check-input" type="checkbox" value="" id="flexCheckIndeterminate"> Su nuolaida (123)</p>
+            
+            
+            </div>
+            
+            </div>
+        </div></div>
+      </div></div>
+    </div>
+<!--Prekes-->
+      <div class="col-lg-9 col-12" >
+        <div class="row">
+   <div class="col-xl-4 col-6">
+    <div class="card" id="pirmas">
+      <a href="produktas.html"><img src="images/preke1.png" class="card-img-top img-fluid"></a>
+      <span class="position-absolute bottom-0 end-0 m-3" id="love"><i class="bi bi-heart-fill text-secondary"></i></span>
+      <div class="card-body">
+        <div class="">
+        <button class="btn btn-secondary col-12" type="submit">Į krepšelį <i class="bi bi-cart-fill"></i></button>
+        <h6 class="card-title">22,99€</h6>
+        </div>
+        <div class="prekes-aprasymas">
+        <span class="">Fotoaparatas Polaroid Now+, white</span></div>
+        <span class=""><b>Aldo.lt</b></span>
+        <div class="star">
+          <i class="bi bi-star-fill text-warning"></i>
+          <i class="bi bi-star-fill text-warning"></i>
+          <i class="bi bi-star-fill text-warning"></i>
+          <i class="bi bi-star-fill text-warning"></i>
+          <i class="bi bi-star-fill"></i>
+          <span class="">(1)</span>
+
+        </div>
+        </div>
+    </div>
+
+   </div>
+   <div class="col-xl-4 col-6">
+    <div class="card" id="antras">
+      <img src="images/preke1.png"  class="card-img-top img-fluid">
+      <span class="position-absolute bottom-0 end-0 m-3" id="love"><i class="bi bi-heart-fill text-secondary"></i></span>
+      <div class="card-body">
+        <div class="">
+        <button class="btn btn-secondary col-12" type="submit">Į krepšelį <i class="bi bi-cart-fill"></i></button>
+        <h6 class="card-title">22,99€</h6>
+        </div>
+        <div class="prekes-aprasymas">
+          <span class="">Fotoaparatas Polaroid Now+, white</span></div>
+          <span class=""><b>Aldo.lt</b></span>
+        <div class="star">
+          <i class="bi bi-star-fill text-warning"></i>
+          <i class="bi bi-star-fill text-warning"></i>
+          <i class="bi bi-star-fill text-warning"></i>
+          <i class="bi bi-star-fill text-warning"></i>
+          <i class="bi bi-star-fill"></i>
+          <span class="">(1)</span>
+
+        </div>
+        </div>
+    </div>
+
+   </div>
+   <div class="col-xl-4 col-6">
+    <div class="card" id="trecias"  class="card-img-top img-fluid">
+      <img src="images/preke1.png" id="preke">
+      <span class="position-absolute bottom-0 end-0 m-3" id="love"><i class="bi bi-heart-fill text-secondary"></i></span>
+      <div class="card-body">
+        <div class="">
+        <button class="btn btn-secondary col-12" type="submit">Į krepšelį <i class="bi bi-cart-fill"></i></button>
+        <h6 class="card-title">22,99€</h6>
+        </div>
+        <div class="prekes-aprasymas">
+          <span class="">Fotoaparatas Polaroid Now+, white</span></div>
+          <span class=""><b>Aldo.lt</b></span>
+        <div class="star">
+          <i class="bi bi-star-fill text-warning"></i>
+          <i class="bi bi-star-fill text-warning"></i>
+          <i class="bi bi-star-fill text-warning"></i>
+          <i class="bi bi-star-fill text-warning"></i>
+          <i class="bi bi-star-fill"></i>
+          <span class="">(1)</span>
+
+        </div>
+        </div>
+    </div>
+
+   </div>
+   <div class="d-xl-none col-6">
+    <div class="card" id="ketvirtas">
+      <img src="images/preke1.png" class="card-img-top img-fluid">
+      <span class="position-absolute bottom-0 end-0 m-3" id="love"><i class="bi bi-heart-fill text-secondary"></i></span>
+      <div class="card-body">
+        <div class="">
+        <button class="btn btn-secondary col-12" type="submit">Į krepšelį <i class="bi bi-cart-fill"></i></button>
+        <h6 class="card-title">22,99€</h6>
+        </div>
+        <div class="prekes-aprasymas">
+        <span class="">Fotoaparatas Polaroid Now+, white</span></div>
+        <span class=""><b>Aldo.lt</b></span>
+        <div class="star">
+          <i class="bi bi-star-fill text-warning"></i>
+          <i class="bi bi-star-fill text-warning"></i>
+          <i class="bi bi-star-fill text-warning"></i>
+          <i class="bi bi-star-fill text-warning"></i>
+          <i class="bi bi-star-fill"></i>
+          <span class="">(1)</span>
+
+        </div>
+        </div>
+    </div>
+
+   </div>
+   </div>
+   <div class="row">
+    <div class="col-xl-4 col-6">
+     <div class="card" id="pirmas">
+       <img src="images/preke1.png" class="card-img-top img-fluid">
+       <span class="position-absolute bottom-0 end-0 m-3" id="love"><i class="bi bi-heart-fill text-secondary"></i></span>
+       <div class="card-body">
+         <div class="">
+         <button class="btn btn-secondary col-12" type="submit">Į krepšelį <i class="bi bi-cart-fill"></i></button>
+         <h6 class="card-title">22,99€</h6>
+         </div>
+         <div class="prekes-aprasymas">
+         <span class="">Fotoaparatas Polaroid Now+, white</span></div>
+         <span class=""><b>Aldo.lt</b></span>
+         <div class="star">
+           <i class="bi bi-star-fill text-warning"></i>
+           <i class="bi bi-star-fill text-warning"></i>
+           <i class="bi bi-star-fill text-warning"></i>
+           <i class="bi bi-star-fill text-warning"></i>
+           <i class="bi bi-star-fill"></i>
+           <span class="">(1)</span>
+ 
+         </div>
+         </div>
+     </div>
+ 
+    </div>
+    <div class="col-xl-4 col-6">
+     <div class="card" id="antras">
+       <img src="images/preke1.png"  class="card-img-top img-fluid">
+       <span class="position-absolute bottom-0 end-0 m-3" id="love"><i class="bi bi-heart-fill text-secondary"></i></span>
+       <div class="card-body">
+         <div class="">
+         <button class="btn btn-secondary col-12" type="submit">Į krepšelį <i class="bi bi-cart-fill"></i></button>
+         <h6 class="card-title">22,99€</h6>
+         </div>
+         <div class="prekes-aprasymas">
+           <span class="">Fotoaparatas Polaroid Now+, white</span></div>
+           <span class=""><b>Aldo.lt</b></span>
+         <div class="star">
+           <i class="bi bi-star-fill text-warning"></i>
+           <i class="bi bi-star-fill text-warning"></i>
+           <i class="bi bi-star-fill text-warning"></i>
+           <i class="bi bi-star-fill text-warning"></i>
+           <i class="bi bi-star-fill"></i>
+           <span class="">(1)</span>
+ 
+         </div>
+         </div>
+     </div>
+ 
+    </div>
+    <div class="col-xl-4 col-6">
+     <div class="card" id="trecias"  class="card-img-top img-fluid">
+       <img src="images/preke1.png" id="preke">
+       <span class="position-absolute bottom-0 end-0 m-3" id="love"><i class="bi bi-heart-fill text-secondary"></i></span>
+       <div class="card-body">
+         <div class="">
+         <button class="btn btn-secondary col-12" type="submit">Į krepšelį <i class="bi bi-cart-fill"></i></button>
+         <h6 class="card-title">22,99€</h6>
+         </div>
+         <div class="prekes-aprasymas">
+           <span class="">Fotoaparatas Polaroid Now+, white</span></div>
+           <span class=""><b>Aldo.lt</b></span>
+         <div class="star">
+           <i class="bi bi-star-fill text-warning"></i>
+           <i class="bi bi-star-fill text-warning"></i>
+           <i class="bi bi-star-fill text-warning"></i>
+           <i class="bi bi-star-fill text-warning"></i>
+           <i class="bi bi-star-fill"></i>
+           <span class="">(1)</span>
+ 
+         </div>
+         </div>
+     </div>
+ 
+    </div>
+    <div class="d-xl-none col-6">
+      <div class="card" id="ketvirtas">
+        <img src="images/preke1.png" class="card-img-top img-fluid">
+        <span class="position-absolute bottom-0 end-0 m-3" id="love"><i class="bi bi-heart-fill text-secondary"></i></span>
+        <div class="card-body">
+          <div class="">
+          <button class="btn btn-secondary col-12" type="submit">Į krepšelį <i class="bi bi-cart-fill"></i></button>
+          <h6 class="card-title">22,99€</h6>
+          </div>
+          <div class="prekes-aprasymas">
+          <span class="">Fotoaparatas Polaroid Now+, white</span></div>
+          <span class=""><b>Aldo.lt</b></span>
+          <div class="star">
+            <i class="bi bi-star-fill text-warning"></i>
+            <i class="bi bi-star-fill text-warning"></i>
+            <i class="bi bi-star-fill text-warning"></i>
+            <i class="bi bi-star-fill text-warning"></i>
+            <i class="bi bi-star-fill"></i>
+            <span class="">(1)</span>
+  
+          </div>
+          </div>
+      </div>
+  
+    </div>
+    </div>
+    <div class="row">
+      <div class="col-xl-4 col-6">
+       <div class="card" id="pirmas">
+         <img src="images/preke1.png" class="card-img-top img-fluid">
+         <span class="position-absolute bottom-0 end-0 m-3" id="love"><i class="bi bi-heart-fill text-secondary"></i></span>
+         <div class="card-body">
+           <div class="">
+           <button class="btn btn-secondary col-12" type="submit">Į krepšelį <i class="bi bi-cart-fill"></i></button>
+           <h6 class="card-title">22,99€</h6>
+           </div>
+           <div class="prekes-aprasymas">
+           <span class="">Fotoaparatas Polaroid Now+, white</span></div>
+           <span class=""><b>Aldo.lt</b></span>
+           <div class="star">
+             <i class="bi bi-star-fill text-warning"></i>
+             <i class="bi bi-star-fill text-warning"></i>
+             <i class="bi bi-star-fill text-warning"></i>
+             <i class="bi bi-star-fill text-warning"></i>
+             <i class="bi bi-star-fill"></i>
+             <span class="">(1)</span>
+   
+           </div>
+           </div>
+       </div>
+   
+      </div>
+      <div class="col-xl-4 col-6">
+       <div class="card" id="antras">
+         <img src="images/preke1.png"  class="card-img-top img-fluid">
+         <span class="position-absolute bottom-0 end-0 m-3" id="love"><i class="bi bi-heart-fill text-secondary"></i></span>
+         <div class="card-body">
+           <div class="">
+           <button class="btn btn-secondary col-12" type="submit">Į krepšelį <i class="bi bi-cart-fill"></i></button>
+           <h6 class="card-title">22,99€</h6>
+           </div>
+           <div class="prekes-aprasymas">
+             <span class="">Fotoaparatas Polaroid Now+, white</span></div>
+             <span class=""><b>Aldo.lt</b></span>
+           <div class="star">
+             <i class="bi bi-star-fill text-warning"></i>
+             <i class="bi bi-star-fill text-warning"></i>
+             <i class="bi bi-star-fill text-warning"></i>
+             <i class="bi bi-star-fill text-warning"></i>
+             <i class="bi bi-star-fill"></i>
+             <span class="">(1)</span>
+   
+           </div>
+           </div>
+       </div>
+   
+      </div>
+      <div class="col-xl-4 col-6">
+       <div class="card" id="trecias"  class="card-img-top img-fluid">
+         <img src="images/preke1.png" id="preke">
+         <span class="position-absolute bottom-0 end-0 m-3" id="love"><i class="bi bi-heart-fill text-secondary"></i></span>
+         <div class="card-body">
+           <div class="">
+           <button class="btn btn-secondary col-12" type="submit">Į krepšelį <i class="bi bi-cart-fill"></i></button>
+           <h6 class="card-title">22,99€</h6>
+           </div>
+           <div class="prekes-aprasymas">
+             <span class="">Fotoaparatas Polaroid Now+, white</span></div>
+             <span class=""><b>Aldo.lt</b></span>
+           <div class="star">
+             <i class="bi bi-star-fill text-warning"></i>
+             <i class="bi bi-star-fill text-warning"></i>
+             <i class="bi bi-star-fill text-warning"></i>
+             <i class="bi bi-star-fill text-warning"></i>
+             <i class="bi bi-star-fill"></i>
+             <span class="">(1)</span>
+   
+           </div>
+           </div>
+       </div>
+   
+      </div>
+      <div class="d-xl-none col-6">
+        <div class="card" id="ketvirtas">
+          <img src="images/preke1.png" class="card-img-top img-fluid">
+          <span class="position-absolute bottom-0 end-0 m-3" id="love"><i class="bi bi-heart-fill text-secondary"></i></span>
+          <div class="card-body">
+            <div class="">
+            <button class="btn btn-secondary col-12" type="submit">Į krepšelį <i class="bi bi-cart-fill"></i></button>
+            <h6 class="card-title">22,99€</h6>
+            </div>
+            <div class="prekes-aprasymas">
+            <span class="">Fotoaparatas Polaroid Now+, white</span></div>
+            <span class=""><b>Aldo.lt</b></span>
+            <div class="star">
+              <i class="bi bi-star-fill text-warning"></i>
+              <i class="bi bi-star-fill text-warning"></i>
+              <i class="bi bi-star-fill text-warning"></i>
+              <i class="bi bi-star-fill text-warning"></i>
+              <i class="bi bi-star-fill"></i>
+              <span class="">(1)</span>
+    
+            </div>
+            </div>
+        </div>
+    
+      </div>
+      </div></div>
+  </div></div>
+  <nav aria-label="Page navigation example">
+    <ul class="pagination justify-content-center">
+      <li class="page-item">
+        <a class="page-link" href="#" aria-label="Praeitas">
+          <span aria-hidden="true">&laquo;</span>
+         
+        </a>
+      </li>
+      <li class="page-item disabled"><a class="page-link" href="#">1</a></li>
+      <li class="page-item"><a class="page-link" href="#">2</a></li>
+      <li class="page-item"><a class="page-link" href="#">3</a></li>
+      <li class="page-item">
+        <a class="page-link" href="#" aria-label="Kitas">
+          <span aria-hidden="true">&raquo;</span>
+          
+        </a>
+      </li>
+    </ul>
+  </nav>
+  <!--Aprašymas-->
+  <section id="hero">
+    <div class="container">
+      <h2>Aprašymas</h2>
+      <p>Maisto produktų kategorijoje rasite išskirtinių lietuviškų gaminio, tokių kaip tradicinis duonos kepinys ar naminis medus. Aksesuarų kategorijoje yra daug įvairių papuošalų ir kitų įdomių dalykų, o "Namų ir automobilio prekių" kategorija siūlo produktus, kuriuos galite naudoti savo namuose ar automobilyje.</p>
+      <p>Visos prekės yra gaminamos Lietuvoje ir parduodamos smulkiųjų verslų savininkų. Tai yra puikus būdas paremti vietinius prekybininkus ir padėti jiems išlikti konkurencingiems.</p>
+      <p>Pirkdami <b>Support Locals</b> parduotuvėje, galite naudoti filtrus, kad susiaurintumėte paieškos rezultatus pagal savo poreikius. Filtrai leidžia jums pasirinkti prekių kainų intervalus, ar yra nemokamas pristatymas, ir kitus kriterijus, kad galėtumėte lengviau rasti būtent tai, ko ieškote. Tai padeda sutaupyti laiką ir padidina patogumą perkant iš vietinių smulkiųjų verslų.</p>
+    </div>
+  </section>
+   <!-- Footer -->
+<footer class="text-center text-lg-start bg-light text-muted">
+
+  <!-- Section: Social media -->
+
+  <!-- Section: Links  -->
+  <section class="">
+    <div class="container text-center text-md-start mt-5 pt-4">
+      <!-- Grid row -->
+      <div class="row me-3">
+        <!-- Grid column -->
+        <div class="col-md-2 col-lg-2 col-xl-2 mx-auto mb-4">
+          <!-- Content -->
+          <h6 class="text-uppercase fw-bold mb-4">
+            Support Locals
+          </h6>
+          <p>© 2023. Visos teisės saugomos.</p>
+          <p>
+            UAB „Support Locals“,
+          </p>
+          <p>
+            Pamėnkalnio g. 11, LT-01116 Vilnius,
+          </p>
+          <p>
+            Įmonės kodas: 354496467,
+          </p>
+          <p>info@supportlocals.lt</p>
+        </div>
+        <!-- Grid column -->
+
+        <!-- Grid column -->
+        <div class="col-md-2 col-lg-2 col-xl-2 mx-auto mb-4">
+          <!-- Links -->
+          <h6 class="text-uppercase fw-bold mb-4">
+            Informacija
+          </h6>
+          <p>
+            <a href="#" class="text-reset">D.U.K</a>
+          </p>
+          <p>
+            <a href="#" class="text-reset">Siuntimas</a>
+          </p>
+          <p>
+            <a href="#" class="text-reset">Grąžinimai</a>
+          </p>
+          <p>
+            <a href="#" class="text-reset">Taisyklės</a>
+          </p>
+        </div>
+        <!-- Grid column -->
+
+        <!-- Grid column -->
+        <div class="col-md-3 col-lg-2 col-xl-2 mx-auto mb-4">
+          <!-- Links -->
+          <h6 class="text-uppercase fw-bold mb-4">
+            Pirkėjams
+          </h6>
+          <p>
+            <a href="#!" class="text-reset">Apie mus</a>
+          </p>
+          <p>
+            <a href="#!" class="text-reset">Parduotuvės</a>
+          </p>
+          <p>
+            <a href="#!" class="text-reset">Paieška</a>
+          </p>
+          <p>
+            <a href="#!" class="text-reset">Tinklaraštis</a>
+          </p>
+        </div>
+        <!-- Grid column -->
+        <div class="col-md-3 col-lg-2 col-xl-2 mx-auto mb-4">
+        <!-- Links -->
+        <h6 class="text-uppercase fw-bold mb-4">
+          Pardavėjams
+        </h6>
+        <p>
+          <a href="#!" class="text-reset">Apie mus</a>
+        </p>
+        <p>
+          <a href="#!" class="text-reset">Taisyklės</a>
+        </p>
+      
+      </div>
+        <!-- Grid column -->
+        <div class="col-md-4 col-lg-3 col-xl-3 mx-auto mb-md-0 mb-4">
+          
+          <h6 class="text-uppercase fw-bold mb-4">Mus rasite</h6>
+          <span><i class="bi bi-facebook"></i> </span>
+          <span><i class="bi bi-instagram"></i></sapn>
+          <span><i class="bi bi-twitter"></i></sapn>
+        </div>
+        
+        </div>
+      
+      
+  
+  </section>
+  
+</footer>
+<div class="spinner-container">
+  <div class="spinner-border text-secondary" style="width: 3rem; height: 3rem;" role="status">
+    </div>
+  </div>
+<!-- Footer -->
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ENjdO4Dr2bkBIFxQpeoTz1HIcje39Wm4jDKdf19U8gI4ddQ3GYNS7NTKfAdVQSZe" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.7/dist/umd/popper.min.js" integrity="sha384-zYPOMqeu1DAVkHiLqWBUTcbYfZ8osu1Nd6Z89ify25QV9guujx43ITvfi12/QExE" crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/js/bootstrap.min.js" integrity="sha384-Y4oOpwW3duJdCWv5ly8SCFYWqFDsfob/3GkgExXKV4idmbt98QcxXYs9UoXAB7BZ" crossorigin="anonymous"></script>
+<script src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
+<script> 
+ $(window).on('load', function() {
+        setTimeout(function(){
+          $('.spinner-container').fadeOut('slow');
+        }, 1000); // show loading for additional 1 second
+      });</script>
+<script> 
+const minPriceRange = document.getElementById("min-price-range");
+  const maxPriceRange = document.getElementById("max-price-range");
+  const selectedRange = document.getElementById("selected-range");
+
+  function updatePriceRange() {
+    selectedRange.innerHTML =   minPriceRange.value + "€" + " - " + maxPriceRange.value+"€ kainos diapazonas";
+  }
+
+  minPriceRange.addEventListener("input", function() {
+    if (parseInt(minPriceRange.value) > parseInt(maxPriceRange.value)) {
+      maxPriceRange.value = minPriceRange.value;
+    }
+    updatePriceRange();
+  });
+
+  maxPriceRange.addEventListener("input", function() {
+    if (parseInt(maxPriceRange.value) < parseInt(minPriceRange.value)) {
+      minPriceRange.value = maxPriceRange.value;
+    }
+    updatePriceRange();
+  });
+  $(document).ready(function() {
+			$('.toggle-btn').click(function() {
+				// Remove color classes from all buttons
+				$('.toggle-btn').removeClass('color1 color2 color3');
+				// Add color class to the clicked button
+				$(this).addClass(function() {
+					if ($(this).hasClass('btn-outline-primary')) {
+						return 'color1';
+					} else if ($(this).hasClass('btn-outline-secondary')) {
+						return 'color2';
+					} else if ($(this).hasClass('btn-outline-danger')) {
+						return 'color3';
+					}
+				});
+				// Remove active class from other buttons
+				$('.toggle-btn').not(this).removeClass('active');
+			});
+		});
+
+  </script>
+  </body>
+</html>

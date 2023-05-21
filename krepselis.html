@@ -1,0 +1,536 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0">
+    <title>Krepšelis</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-KK94CHFLLe+nY2dmCWGMq91rCGa5gtU4mk92HdvYe+M/SXH301p5ILy+dN9+nJOZ" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.3.0/font/bootstrap-icons.css">
+    
+    <style>
+      .nav-linkas{
+  margin-left:35px;
+  margin-right:35px;
+}
+body{
+  background-color: #fefae0;
+}
+
+.navbar-brand:hover{
+  color: #d4a373;
+}
+.nav-link:hover{
+  color: #d4a373;
+}
+
+.btn{
+  border:0px solid;
+}
+.btn:hover {
+  border:0px solid line;
+  background-color: #d4a373;
+  
+}
+.navbar-toggler{
+  border:0px solid;
+  
+  margin-top:-10px;
+  font-size:1rem;
+}
+.input-group{
+  margin-right:30%;
+}
+#mazas{
+  display:none;
+  
+}
+#didelis{
+  font-size:1.25rem;
+}
+
+
+
+#mazosfoto{
+  margin-left:70%;
+}
+
+
+.breadcrumb-item
+{
+  font-size:12px;
+}
+
+#kiekis
+{
+  background-color: #e9edc9;
+  
+}
+
+
+#cardpav
+{
+  margin-top:16px;
+}
+#pirmas:hover
+  {
+    
+   border:3px solid;
+border-color: #d4a373;
+    
+  }
+  #antras:hover
+  {
+    
+   border:3px solid;
+border-color: #d4a373;
+    
+  }
+  #trecias:hover
+  {
+    
+   border:3px solid;
+border-color: #d4a373;
+    
+  }
+  #ketvirtas:hover
+  {
+    
+   border:3px solid;
+border-color: #d4a373;
+    
+  }
+  .star-rating span {
+  color: #ccc;
+  cursor: pointer;
+  transition: color 0.3s ease-in-out;
+}
+
+.star-rating span.active,
+.star-rating span:hover,
+.star-rating span.hover {
+  color: #ffcc00;
+}
+.spinner-container {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 9999;
+  background-color: rgba(255, 255, 255);
+}
+.delete-btn {
+            cursor: pointer;
+            
+        }
+.close
+{
+  border:0px;
+  background-color: transparent;
+}
+@media (max-width: 700px) {
+  
+  #mazas {
+    display: flex;
+    flex-direction: row;
+    align-items: flex-end;
+    
+  }
+  .icon-container>ul>li{
+    margin-right:16px;
+    font-size:1.25rem;
+  }
+  .input-group{
+    margin-left:16px;
+    margin-right:16px;
+  }
+  .navbar-brand{
+    margin-left:16px;
+  }
+  #didelis
+  {
+    display:none;
+  }
+  #tekstas
+{
+  font-size: 11px;
+}
+  
+  #breadcrumb
+{
+  margin-left:16px;
+}
+
+#pirmas
+  {
+    margin-left:16px;
+    margin-bottom: 16px;
+  }
+  #antras
+  {
+    margin-right: 16px;
+    margin-bottom: 16px;
+  }
+  #trecias
+  {
+    margin-left:16px;
+    margin-bottom: 16px;
+  }
+  #ketvirtas
+  {
+    margin-right: 16px;
+    margin-bottom: 16px;
+  }
+  #aprasymas
+  {
+    padding-left:30px;
+    padding-right: 30px;
+  }
+  
+  
+}
+
+
+
+    </style>
+  </head>
+  <body>
+    
+    <nav class="navbar navbar-expand-lg">
+      <div class="container"> 
+        
+          <a href="index.html" class="navbar-brand"> <i class="bi bi-geo-alt" style="color:#d4a373"></i> Support Locals</a>
+          <div class="icon-container">
+            
+            <ul class="navbar-nav mr-auto"  id="mazas">
+                <li class="nav-item">
+                    <a href="#" class="nav-link"><i class="bi bi-heart-fill" ></i></a>
+                </li>
+                <li class="nav-item">
+                    <a href="prisijungti.html" class="nav-link"><i class="bi bi-person-circle"></i></a>
+                </li>
+                <li class="nav-item">
+                    <a href="krepselis.html" class="nav-link"><i class="bi bi-cart-fill"></i></a>
+                </li>
+                <li class="nav-item">
+                    <a href="#" class="nav-link" >EN</a>
+                </li>
+                
+            </ul>
+        </div>
+          <div class="input-group">
+             <input type="search" class="form-control typeahead-input" placeholder="Paieška" aria-label="Paieška" aria-describedby="basic-addon2">
+              <button class="btn btn-secondary" id="basic-addon2">Ieškoti</button> 
+            </div>
+            
+          <div class="icon-container">
+            
+              <ul class="navbar-nav mr-auto" id="didelis">
+                  <li class="nav-item">
+                      <a href="#" class="nav-link"><i class="bi bi-heart-fill" ></i></a>
+                  </li>
+                  <li class="nav-item">
+                      <a href="prisijungti.html" class="nav-link"><i class="bi bi-person-circle"></i></a>
+                  </li>
+                  <li class="nav-item">
+                      <a href="krepselis.html" class="nav-link"><i class="bi bi-cart-fill"></i></a>
+                  </li>
+                  <li class="nav-item">
+                      <a href="#" class="nav-link" >EN</a>
+                  </li>
+                  
+              </ul>
+          </div>
+          
+          </div>
+
+        
+
+      </div>
+     
+  </nav>
+  <div class="container">
+    <nav class="navbar navbar-expand-lg">
+     <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navmenu">
+      <span class="navbar-toggler-icon"></span>
+     </button>
+      <div class="collapse navbar-collapse justify-content-center" id="navmenu">
+        <ul class="navbar-nav flex-fill justify-content-between">
+          <li class="nav-linkas">
+              <a href="Prekes.html" class="nav-link">Prekės</a>
+          </li>
+          <li class="nav-linkas">
+            <a href="#" class="nav-link">Paslaugos</a>
+        </li>
+        <li class="nav-linkas">
+          <a href="parduotuves.html" class="nav-link">Parduotuvės</a>
+      </li>
+      <li class="nav-linkas">
+        <a href="#" class="nav-link">Apie</a>
+    </li>
+    <li class="nav-linkas">
+      <a href="#" class="nav-link">Tinklaraštis</a>
+  </li>
+  <li class="nav-linkas">
+    <a href="#" class="nav-link">Pardavėjams</a>
+</li>
+<li class="nav-linkas">
+  <a href="ai.html"><button class="btn btn-secondary" type="submit">Nežinai, ką dovanoti?</button></a>
+</li>
+      </ul>
+      </div>
+      
+    </nav></div>
+    
+    <!--Breadcrumbs-->
+    <div class="container">
+    <nav aria-label="breadcrumb">
+      <ol class="breadcrumb">
+        <li class="breadcrumb-item" id="breadcrumb"><a href="index.html" style="color:#d4a373">Titulinis</a></li>
+        <li class="breadcrumb-item active">Krepšelis</li>
+        
+      </ol>
+    </nav></div>
+
+    
+    
+      <div class="container h-100">
+        <div class="row d-flex justify-content-center align-items-center h-100">
+          <div class="col-lg-12 col-10">
+            <p><span class="h2" >Krepšelis </span><span class="h4" >(1 prekė jūsų krepšelyje)</span></p>
+    
+            <div class="card mb-4">
+              <div class="card-body p-4">
+    
+                <div class="row align-items-center justify-content-center">
+                  <div class="col-md-2 col-4">
+                    <img src="images/foto1.png"
+                      class="img-fluid">
+                  </div>
+                  <div class="col-lg-2 d-none d-sm-block d-flex justify-content-center">
+                    <div>
+                      <p class="small text-muted"id="tekstas">Pavadinimas</p>
+                      <p class="lead fw-normal mb-0" id="tekstas">Fotoaparatas Polaroid Now+</p>
+                    </div>
+                  </div>
+                  <div class="col-lg-2 d-none d-sm-block d-flex justify-content-center">
+                    <div>
+                      <p class="small text-muted mb-4 pb-2" id="tekstas">Spalva</p>
+                      <p class="lead fw-normal mb-0" id="tekstas">
+                        Balta</p>
+                    </div>
+                  </div>
+                  <div class="col-lg-2 d-none d-sm-block d-flex justify-content-center">
+                    <div>
+                      <p class="small text-muted mb-3 pb-2" id="tekstas">Kiekis</p>
+                      <!--<p class="lead fw-normal mb-0">1</p>-->
+                      <input min="1" max="5" type="number" id="typeNumber" placeholder="1"  style="width: 55px;"class="form-control" />
+                    </div>
+                  </div>
+                  <div class="col-lg-2 d-none d-sm-block d-flex justify-content-center">
+                    <div>
+                      <p class="small text-muted mb-4 pb-sm-2 pb-0" id="tekstas">Kaina</p>
+                      <p class="lead fw-normal mb-0" id="tekstas">22,99€</p>
+                    </div>
+                  </div>
+                  <div class="col-lg-1 d-none d-sm-block d-flex justify-content-center">
+                    <div>
+                      <p class="small text-muted mb-4 pb-2" id="tekstas">Viso</p>
+                      <p class="lead fw-normal mb-0" id="tekstas">22,99€</p>
+                    </div>
+                  </div>
+                  <div class="col-lg-1 d-none d-sm-block d-flex justify-content-center">
+                    <div>
+                      <h4><i class="bi bi-trash text-danger delete-btn" data-toggle="modal" data-target="#confirmModal"></i></h4>
+                    </div>
+                  </div>
+                  <div class="col-md-1 col-8 d-flex justify-content-center d-block d-sm-none">
+                    <div>
+                      <p class="small text-muted  "id="tekstas">Pavadinimas: Fotoaparatas Polaroid Now+</p>
+                      <p class="small text-muted " id="tekstas">Spalva: Balta</p>
+                      <p class="small text-muted " id="tekstas">Kiekis <input min="1" max="5" type="number" id="typeNumber" placeholder="1"  style="width: 55px;"class="form-control" /></p>
+                      <!--<p class="lead fw-normal mb-0">1</p>-->
+                      <p class="small text-muted" id="tekstas">Kaina: 22,99€</p>
+                      
+                      <h4><i class="bi bi-trash text-danger delete-btn" data-toggle="modal" data-target="#confirmModal"></i></h4>
+                    </div>
+                  </div>
+                </div>
+    
+              </div>
+            </div>
+    
+            <div class="card mb-5">
+              <div class="card-body p-4">
+    
+                <div class="float-end">
+                  <p class="mb-0 me-5 d-flex align-items-center">
+                    <span class="small text-muted me-2" id="tekstas">Užsakymo suma:</span> <span
+                      class="lead fw-normal" id="tekstas">22,99€</span>
+                  </p>
+                </div>
+    
+              </div>
+            </div>
+    
+            <div class="d-flex  justify-content-end">
+              <button type="button" class="btn btn-light me-2">Tęsti apsipirkimą</button>
+              <button type="button" class="btn btn-secondary">Eiti į apmokėjimą</button>
+            </div>
+    
+          </div>
+        </div>
+      </div>
+      <div class="modal fade" id="confirmModal" tabindex="-1" role="dialog" aria-labelledby="confirmModalLabel" aria-hidden="true">
+          <div class="modal-dialog" role="document">
+            <div class="modal-content">
+              <div class="modal-header">
+                <h5 class="modal-title">Pranešimas</h5>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                  <span aria-hidden="true">&times;</span>
+                </button>
+              </div>
+              <div class="modal-body">
+                <p>Ar tikrai norite ištrinti prekę?</p>
+              </div>
+              <div class="modal-footer">
+                <button type="button" class="btn btn-success">Taip</button>
+                <button type="button" class="btn btn-light" data-dismiss="modal">Ne</button>
+              </div>
+            </div>
+          </div>
+        </div>
+    
+
+
+
+   <!-- Footer -->
+<footer class="text-center text-lg-start bg-light text-muted">
+
+ 
+
+  <!-- Section: Links  -->
+  <section class="">
+    <div class="container text-center text-md-start mt-5 pt-4">
+      <!-- Grid row -->
+      <div class="row me-3">
+        <!-- Grid column -->
+        <div class="col-md-2 col-lg-2 col-xl-2 mx-auto mb-4">
+          <!-- Content -->
+          <h6 class="text-uppercase fw-bold mb-4">
+            Support Locals
+          </h6>
+          <p>© 2023. Visos teisės saugomos.</p>
+          <p>
+            UAB „Support Locals“,
+          </p>
+          <p>
+            Pamėnkalnio g. 11, LT-01116 Vilnius,
+          </p>
+          <p>
+            Įmonės kodas: 354496467,
+          </p>
+          <p>info@supportlocals.lt</p>
+        </div>
+        <!-- Grid column -->
+
+        <!-- Grid column -->
+        <div class="col-md-2 col-lg-2 col-xl-2 mx-auto mb-4">
+          <!-- Links -->
+          <h6 class="text-uppercase fw-bold mb-4">
+            Informacija
+          </h6>
+          <p>
+            <a href="#" class="text-reset">D.U.K</a>
+          </p>
+          <p>
+            <a href="#" class="text-reset">Siuntimas</a>
+          </p>
+          <p>
+            <a href="#" class="text-reset">Grąžinimai</a>
+          </p>
+          <p>
+            <a href="#" class="text-reset">Taisyklės</a>
+          </p>
+        </div>
+        <!-- Grid column -->
+
+        <!-- Grid column -->
+        <div class="col-md-3 col-lg-2 col-xl-2 mx-auto mb-4">
+          <!-- Links -->
+          <h6 class="text-uppercase fw-bold mb-4">
+            Pirkėjams
+          </h6>
+          <p>
+            <a href="#!" class="text-reset">Apie mus</a>
+          </p>
+          <p>
+            <a href="#!" class="text-reset">Parduotuvės</a>
+          </p>
+          <p>
+            <a href="#!" class="text-reset">Paieška</a>
+          </p>
+          <p>
+            <a href="#!" class="text-reset">Tinklaraštis</a>
+          </p>
+        </div>
+        <!-- Grid column -->
+        <div class="col-md-3 col-lg-2 col-xl-2 mx-auto mb-4">
+        <!-- Links -->
+        <h6 class="text-uppercase fw-bold mb-4">
+          Pardavėjams
+        </h6>
+        <p>
+          <a href="#!" class="text-reset">Apie mus</a>
+        </p>
+        <p>
+          <a href="#!" class="text-reset">Taisyklės</a>
+        </p>
+      
+      </div>
+        <!-- Grid column -->
+        <div class="col-md-4 col-lg-3 col-xl-3 mx-auto mb-md-0 mb-4">
+          
+          <h6 class="text-uppercase fw-bold mb-4">Mus rasite</h6>
+          <span><i class="bi bi-facebook"></i> </span>
+          <span><i class="bi bi-instagram"></i></sapn>
+          <span><i class="bi bi-twitter"></i></sapn>
+        </div>
+        
+        </div>
+      
+      
+  
+  </section>
+  
+</footer>
+<div class="spinner-container">
+  <div class="spinner-border text-secondary" style="width: 3rem; height: 3rem;" role="status">
+    </div>
+    
+  </div>
+<!-- Footer -->
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ENjdO4Dr2bkBIFxQpeoTz1HIcje39Wm4jDKdf19U8gI4ddQ3GYNS7NTKfAdVQSZe" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.7/dist/umd/popper.min.js" integrity="sha384-zYPOMqeu1DAVkHiLqWBUTcbYfZ8osu1Nd6Z89ify25QV9guujx43ITvfi12/QExE" crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/js/bootstrap.min.js" integrity="sha384-Y4oOpwW3duJdCWv5ly8SCFYWqFDsfob/3GkgExXKV4idmbt98QcxXYs9UoXAB7BZ" crossorigin="anonymous"></script>
+<script src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"></script>
+<script> 
+ $(window).on('load', function() {
+        setTimeout(function(){
+          $('.spinner-container').fadeOut('slow');
+        }, 1000); // show loading for additional 1 second
+      });
+    
+
+
+  </script>
+  </body>
+</html>
